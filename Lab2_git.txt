@@ -1,0 +1,118 @@
+#red
+git config --global "user.name" "262512"
+git config --global "user.email" "262512@niuitmo.ru"
+
+#blue
+git config --global "user.name" "alexandr"
+git config --global "user.email" "arumskiy@gmail.com"
+
+git init gitRep
+cd git*
+mkdir alph
+
+#r0 red
+git config --global "user.name" "262512"
+git config --global "user.email" "262512@niuitmo.ru"
+cp -f ../Commits/commit0/* ./alph/
+git add .
+git commit -m "r0"
+git tag "r0"
+
+#r1 blue
+git config --global "user.name" "alexandr"
+git config --global "user.email" "arumskiy@gmail.com"
+git checkout -b "blue"
+cp -f ../Commits/commit1/* ./alph/
+git add .
+git commit -m "r1"
+git tag "r1"
+
+#r2 red
+git config --global "user.name" "262512"
+git config --global "user.email" "262512@niuitmo.ru"
+git checkout -b "red"
+cp -f ../Commits/commit2/* ./alph/
+git add .
+git commit -m "r2"
+git tag "r2"
+
+#r3 red
+cp -f ../Commits/commit3/* ./alph/
+git add .
+git commit -m "r3"
+git tag "r3"
+
+#r4 red
+gir checkout main
+cp -f ../Commits/commit4/* ./alph/
+git add .
+git commit -m "r4"
+git tag "r4"
+
+#r5 red
+gir checkout red
+cp -f ../Commits/commit5/* ./alph/
+git add .
+git commit -m "r5"
+git tag "r5"
+
+#r6 red
+git checkout main
+cp -f ../Commits/commit6/* ./alph/
+git add .
+git commit -m "r6"
+git tag "r6"
+
+#r7 red
+cp -f ../Commits/commit7/* ./alph/
+git add .
+git commit -m "r7"
+git tag "r7"
+
+#r8 red
+cp -f ../Commits/commit8/* ./alph/
+git add .
+git commit -m "r8"
+git tag "r8"
+
+#r9 red
+git checkout red
+cp -f ../Commits/commit9/* ./alph/
+git add .
+git commit -m "r9"
+git tag "r9"
+
+#r10 red
+git checkout main
+cp -f ../Commits/commit10/* ./alph/
+git add .
+git commit -m "r10"
+git tag "r10"
+
+#r11 red
+git checkout red
+cp -f ../Commits/commit11/* ./alph/
+git add .
+git commit -m "r11"
+git tag "r11"
+
+#r12 blue
+git config --global "user.name" "alexandr"
+git config --global "user.email" "arumskiy@gmail.com"
+git checkout blue
+git merge --no-ff -m "r12" r11
+git tag "r12"
+
+#r13 blue
+cp -f ../Commits/commit13/* ./alph/
+git add .
+git commit -m "r13"
+git tag "r13"
+
+#r14 red
+git config --global "user.name" "262512"
+git config --global "user.email" "262512@niuitmo.ru"
+git checkout main
+git merge --no-ff -m "r14" r13
+###Conflict №1###
+git tag "r14"
