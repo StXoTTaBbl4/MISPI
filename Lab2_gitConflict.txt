@@ -1,0 +1,17 @@
+###Conflict №1###
+###on merge r13 -> 10###
+git status
+
+vim alph/Lab4.java
+<<<<<<< HEAD
+previous : 8
+=======
+previous : 12
+>>>>>>> r13
+
+###solution###
+replase with: previous : 8 & 12
+###========###
+
+git add Lab4.java
+git commit -m "r14"

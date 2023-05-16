@@ -1,0 +1,94 @@
+svnadmin create svnRep
+cd svn*
+export SVN_EDITOR=vim
+pathf=file:///home/studs/s262512/MISPI/Lab2/svnRep
+svn mkdir ${pathf}/trunk ${pathf}/branches ${pathf}/tags -m "repository created" --username="262512"
+svn checkout ${pathf}/trunk workspace
+cd workspace
+
+#r0 red
+cp -f ~/MISPI/Lab2/Commits/commit0/* ./
+svn add *
+svn commit -m "r0" --username="262512"
+
+#r1 blue
+svn copy ${pathf}/trunk ${pathf}/branches/blue -m "fork-blue" --username="alexandr"
+svn switch ${pathf}/branches/blue
+cp -f ~/MISPI/Lab2/Commits/commit1/* ./
+svn add *
+svn commit -m "r1" --username="aleksandr"
+
+#r2 red
+svn copy ${pathf}/branches/blue ${pathf}/branches/red -m "fork-red" --username="262512"
+svn switch ${pathf}/branches/red
+cp -f ~/MISPI/Lab2/Commits/commit2/* ./
+svn add *
+svn commit -m "r2" --username="262512"
+
+#r3 red
+cp -f ~/MISPI/Lab2/Commits/commit3/* ./
+svn add *
+svn commit -m "r3" --username="262512"
+
+#r4 red
+svn switch ${pathf}/trunk
+cp -f ~/MISPI/Lab2/Commits/commit4/* ./
+svn add *
+svn commit -m "r4" --username="262512"
+
+#r5 red
+svn switch ${pathf}/branches/red
+cp -f ~/MISPI/Lab2/Commits/commit5/* ./
+svn add *
+svn commit -m "r5" --username="262512"
+
+#r6 red
+svn switch ${pathf}/trunk
+cp -f ~/MISPI/Lab2/Commits/commit6/* ./
+svn add *
+svn commit -m "r6" --username="262512"
+
+#r7 red
+cp -f ~/MISPI/Lab2/Commits/commit7/* ./
+svn add *
+svn commit -m "r7" --username="262512"
+
+#r8 red
+cp -f ~/MISPI/Lab2/Commits/commit8/* ./
+svn add *
+svn commit -m "r8" --username="262512"
+
+#r9 red
+svn switch ${pathf}/branches/red
+cp -f ~/MISPI/Lab2/Commits/commit9/* ./
+svn add *
+svn commit -m "r9" --username="262512"
+
+#r10 red
+svn switch ${pathf}/trunk
+cp -f ~/MISPI/Lab2/Commits/commit10/* ./
+svn add *
+svn commit -m "r10" --username="262512"
+
+#r11 red
+svn switch ${pathf}/branches/red
+cp -f ~/MISPI/Lab2/Commits/commit11/* ./
+svn add *
+svn commit -m "r11" --username="262512"
+
+#r12
+svn switch ${pathf}/branches/blue
+svn merge ${pathf}/branches/red ${pathf}/branches/blue --username="aleksandr"
+svn add *
+svn commit -m "r12" --username="aleksandr"
+
+#13
+cp -f ~/MISPI/Lab2/Commits/commit13/* ./
+svn add *
+svn commit -m "r13" --username="262512"
+
+#14
+svn switch ${pathf}/trunk
+svn merge ${pathf}/branches/blue ${pathf}/trunk --username="262512"
+svn add *
+svn commit -m "r14" --username="262512"
