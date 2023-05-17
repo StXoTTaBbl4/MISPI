@@ -1,10 +1,10 @@
 #red
-git config --global "user.name" "262512"
-git config --global "user.email" "262512@niuitmo.ru"
+#git config --global "user.name" "262512"
+#git config --global "user.email" "262512@niuitmo.ru"
 
 #blue
-git config --global "user.name" "alexandr"
-git config --global "user.email" "arumskiy@gmail.com"
+#git config --global "user.name" "alexandr"
+#git config --global "user.email" "arumskiy@gmail.com"
 
 git init gitRep
 cd git*
