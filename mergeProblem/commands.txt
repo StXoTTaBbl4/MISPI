@@ -1,0 +1,63 @@
+git init mergeProblem
+cd mergeProblem
+git branch -m "main"
+mkdir alph
+
+#r0
+git config --global "user.name" "262512"
+cp -f ../Commits/commit0/* ./alph/
+git add .
+git commit -m "r0"
+git tag "r0"
+#r1
+
+git config --global "user.name" "alexandr"
+git checkout -b "blue"
+cp -f ../Commits/commit1/* ./alph/
+git add .
+git commit -m "r1"
+git tag "r1"
+#r2
+
+git config --global "user.name" "262512"
+git checkout -b "red"
+cp -f ../Commits/commit2/* ./alph/
+git add .
+git commit -m "r2"
+git tag "r2"
+#r3
+
+cp -f ../Commits/commit3/* ./alph/
+git add .
+git commit -m "r3"
+git tag "r3"
+#r4 red
+
+git checkout main
+cp -f ../Commits/commit4/* ./alph/
+git add .
+git commit -m "r4"
+git tag "r4"
+#r11 red
+
+git checkout red
+cp -f ../Commits/commit11/* ./alph/
+git add .
+git commit -m "r11"
+git tag "r11"
+
+#r12 blue
+git config --global "user.name" "alexandr"
+git checkout blue
+git merge --no-ff -m "r12" r11
+git tag "r12"
+git log --graph --oneline --decorate --all
+echo "This is Lab4 from r12"
+cd alph 
+cat Lab*
+git checkout r1
+echo "This is Lab4 from r1" 
+cat Lab*
+git checkout r11
+echo "This is Lab4 from r11" 
+cat Lab*
